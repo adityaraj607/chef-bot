@@ -12,6 +12,9 @@ bot = commands.Bot(command_prefix=config.prefix, intents=intents)
 async def on_ready():
     print(f"logged in as {bot.user}")
 
+async def load_extensions():
+    await bot.load_extension("functions.quote")
+
 @bot.command()
 async def ping(ctx):
     await ctx.send("Pong!")
